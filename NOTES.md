@@ -1,27 +1,31 @@
 # Notes
 
+## Purpose
+This document captures the open-scope features chosen, the key decisions made, and the trade-offs for the Guestara booking heatmap assignment.
+
 ## Open-scope choices and rationale
-+- Filtering (status, room type, source): makes the heatmap and detail panel actionable for staff that need a quick operational slice.
-+- Stats strip (month metrics): gives immediate context without opening the detail list.
-+- Search by guest name: helps front desk staff locate bookings quickly; the right panel switches to search results.
-+- Room search: narrows both the calendar and details to a specific room.
-+- CSV export: enables quick handoff for reporting or audits.
-+- Keyboard navigation: supports fast navigation and range selection without the mouse.
-+
-+## Justifications
-+- Week starts on Monday: hotels and front desk teams often think in Monday-first business weeks; this reduces context switching.
-+- Inclusive-exclusive nights: a booking occupies nights from check-in through the night before check-out (check-out day is free). This is used consistently in the occupancy logic and overlap checks.
-+- Cancelled bookings excluded: occupancy represents actual rooms in use, not cancelled inventory.
-+
-+## Trade-offs and time choices
-+- Used native Date utilities instead of a date library to keep dependencies minimal and to show manual date logic.
-+- Room count is derived from the dataset, with a fallback to 10 if data is incomplete.
-+- Search results are shown in the right panel rather than a modal to keep the workflow in one place.
-+
-+## What I would improve with more time
-+- Add an occupancy tooltip per day with a breakdown by room type.
-+- Add a small legend for search highlighting and selection states.
-+- Add empty-state guidance for filters that yield no results.
-+
-+## How to run
-+See README.md for install and dev server commands.
+- Filtering (status, room type, source): makes the heatmap and detail panel useful for daily ops without extra clicks.
+- Stats strip (month metrics): gives a quick pulse on the month without opening the detail list.
+- Search by guest name: supports front desk lookups; the right panel switches to results.
+- Room search: narrows the calendar and details to a specific room.
+- CSV export: supports quick reporting or handoff.
+- Keyboard navigation: faster range selection for power users.
+
+## Key decisions and justifications
+- Week starts on Monday to match typical business-week workflows in hospitality.
+- Inclusive-exclusive nights: occupied nights are check-in through the night before check-out. Check-out day is free.
+- Cancelled bookings are excluded from occupancy to reflect real room usage.
+- Async data loading via fetch with loading and error states as required by the brief.
+
+## Trade-offs and time choices
+- Used native Date utilities instead of a date library to keep dependencies minimal.
+- Room count is derived from the dataset, with a fallback to 10 if data is incomplete.
+- Search results are shown in the right panel (not a modal) to keep context visible.
+
+## What I would improve with more time
+- Add a per-day tooltip that breaks occupancy down by room type.
+- Add a small legend for search highlighting and selection states.
+- Add more empty-state guidance for filters and searches with no matches.
+
+## How to run
+See README.md for install and dev server commands.
