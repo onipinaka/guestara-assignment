@@ -29,3 +29,14 @@ This document captures the open-scope features chosen, the key decisions made, a
 
 ## How to run
 See README.md for install and dev server commands.
+
+## How to use the app
+- Navigate months with the Prev/Today/Next buttons in the header.
+- The heatmap shows how many rooms are occupied per night; darker means higher occupancy.
+- Click a day to see bookings for that single night in the right panel.
+- Click and drag across days to select a range; the right panel updates to all overlapping bookings.
+- Use Filters to narrow by status, room type, or source; the heatmap and details update together.
+- Use Guest search to list all matching bookings; dates with matches are highlighted on the calendar.
+- Use Room search to focus on a specific room number; both calendar and results update.
+- Use Export CSV to download the current right-panel results.
+- Keyboard: Arrow keys move the focused day, Shift + arrows extend the selection, Enter selects.
