@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap');
+@import "tailwindcss";
+
+:root {
+  --canvas: #f7f4ef;
+  --surface: #ffffff;
+  --surface-muted: #f3ede4;
+  --ink: #1c1917;
+  --ink-muted: #5f564d;
+  --border: #e2d9cd;
+  --accent-soft: #f2e4cf;
+  --accent-strong: #a25a1c;
+  --font-sans: "IBM Plex Sans", "Segoe UI", Arial, sans-serif;
+  --font-display: "Fraunces", "Times New Roman", serif;
+  color-scheme: light;
+}
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    font-family: var(--font-sans);
+    background: var(--canvas);
+    color: var(--ink);
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-display);
+    margin: 0;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  button,
+  input {
+    font-family: inherit;
+  }
+
+  #root {
+    min-height: 100svh;
+  }
+}
