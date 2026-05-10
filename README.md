@@ -22,6 +22,12 @@ A single-page React app that visualizes hotel occupancy as a month heatmap calen
 <img width="1387" height="955" alt="Screenshot 2026-05-10 185806" src="https://github.com/user-attachments/assets/b8c5ed47-9b02-452f-8be2-458c0a3badff" />
 
 
+
+
+
+
+	 
+
 <img width="1379" height="951" alt="image" src="https://github.com/user-attachments/assets/b0017039-ae6d-4e71-8f91-4f04c6f3535c" />
 
 
